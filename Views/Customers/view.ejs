@@ -1,0 +1,45 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/view-customer.css">
+</head>
+<%- include('../includes/body.ejs') %>
+<%- include('../includes/nav.ejs') %>
+<% if(customers.length>0) {%>
+<div class="cards">
+    <% for(customer of customers){%>
+    <article class="card customer-item">
+        <header class="card__header">
+            <h1 class="customer__title"><%=customer.name%></h1>
+        </header>
+        <div class="card__image">
+            <img src="<%= customer.imageUrl%>" alt="<%=customer.title%>">
+        </div>
+        <div class="card__content">
+            <h3 class="customer__email">Email: <%=customer.email%></h3>
+            <h3 class="customer__phnNo">Phone Number: <%=customer.phnNo%></h3>
+            <p class="customer__address">Address: <%=customer.address%></p>
+        </div>
+        <% if(userType==="Admin" || userType=="admin"){%>
+        <div class="card__actions">
+            <form action="/update-customer" method="get">
+                <button class="btn" type="submit">Update</button>
+                <input type="hidden" value="<%=customer.id%>" name="id">
+                <input type="hidden" name="_csrf" id="csrf" value="<%=csrfToken%>">
+            </form>
+            <form action="/delete-customer" method="POST">
+                <button class="btn" type="submit">Delete</button>
+                <input type="hidden" value="<%=customer.id%>" name="id">
+                <input type="hidden" name="_csrf" id="csrf" value="<%=csrfToken%>">
+            </form>
+        </div>
+        <%}%>
+        <%}%>
+        </div>
+        <% } else{%>
+    <div class="cards">
+        <h1 style="color:snow;">No Customers Found</h1>
+    </div>
+    <% }%>
+    </article>
+    
+<%- include('../includes/foot.ejs') %>

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Pacifico&display=swap');
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.home__header{
+    font-family: 'Pacifico';
+    font-size: 10vh;
+    color:ghostwhite;
+    text-decoration: underline;
+    word-wrap: break-word;
+    text-align: center;
+}

@@ -1,0 +1,23 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/create-customer.css">
+</head>
+<%- include('../includes/body.ejs') %>
+<%- include('../includes/nav.ejs') %>
+<form action="/create-customer" method="POST" class="container">
+    <div class="customer__list">
+        <p class="customer__list__header">Create a New Customer</p>
+        <p class="customer__list__para">Please provide customer information</p>
+        <input type="text" name="name" id="name" placeholder="Customer Name" class="customer__list__item" required>
+        <input type="tel" name="phnNo" id="phnNo" placeholder="Phone Number" class="customer__list__item" required>
+        <input type="text" name="imageUrl" id="imageUrl" placeholder="Picture Link" class="customer__list__item" required>
+        <textarea name="address" id="address" cols="30" rows="10" class="customer__list__item" placeholder="Address"></textarea>
+        <input type="hidden" name="_csrf" id="csrf" value="<%=csrfToken%>">
+        <button type="submit" class="customer__list__btn__signup">Create</button>
+    </div>
+    <div class="customer__message" style=<%=props%>>
+        <p><%=message%></p>
+    </div>
+</form>
+
+<%- include('../includes/foot.ejs') %>

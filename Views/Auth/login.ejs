@@ -1,0 +1,22 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/login.css">
+</head>
+<%- include('../includes/body.ejs') %>
+<%- include('../includes/nav.ejs') %>
+<form action="/login" method="POST" class="container">
+    <div class="login__list">
+        <p class="login__list__header">Login</p>
+        <p class="login__list__para">Please provide the necessary information to login</p>
+        <input type="text" name="userName" id="userName" placeholder="User Name" class="login__list__item" required>
+        <input type="password" name ="password" id="password" placeholder="Password" class="login__list__item" required>
+        <input type="hidden" name="_csrf" id="csrf" value="<%=csrfToken%>">
+        <button type="submit" class="login__list__btn">Login</button>
+    </div>
+    <div class="login__message" style=<%=props%>>
+        <p><%=message%></p>
+    </div>
+</form>
+
+    
+<%- include('../includes/foot.ejs') %>

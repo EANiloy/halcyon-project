@@ -1,0 +1,35 @@
+<nav class="nav">
+    <ul class="nav__list">
+        <li class="nav__list__item">
+            <a href="/">Home</a>
+        </li>
+        <li class="nav__list__item">
+            
+            <%if (isLoggedIn){ %>
+            <a href="/#">Customer</a>
+            <ul class="nav__list__dropdown">
+                <% if (userType==="Admin" || userType==="admin"){%>
+                <li class="nav__list__dropdown__item"><a href="/create-customer">Create Customer</a></li>
+                <%}%>
+                <li class="nav__list__dropdown__item"><a href="/view-customer">View Customer</a></li>
+            </ul>
+            <%} else{%>
+                <a href="/login">Customer</a>
+                <%}%>
+        </li>
+    </ul>
+    <ul class="nav__list">
+        <% if (!isLoggedIn) {%>
+        <li class="nav__list__item">
+            <a href="/login">Login</a>
+        </li>
+        <li class="nav__list__item">
+            <a href="/signup">Signup</a>
+        </li>
+        <%} else {%>
+        <li class="nav__list__item">
+            <a href="/logout">Log Out</a>
+        </li>
+        <%}%>
+    </ul>
+</nav>

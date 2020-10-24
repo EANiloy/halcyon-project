@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Pacifico&display=swap');
+
+.container {
+display:flex;
+flex-flow: column;
+flex-wrap: nowrap;
+justify-content: center;
+border-style:solid;
+border-color:#ccc;
+border-width:0.5px;
+align-items:center;
+box-shadow: -4px -4px 10px -6px rgba(0,0,0,0.75);
+width:40%;
+height:70%;
+margin:auto;
+margin-top:5%;
+background: linear-gradient(0deg, rgba(198,211,231,1) 0%, rgba(196,196,196,1) 100%);;
+}
+.customer__list{
+    display:flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.customer__list__item{
+    width:42%;
+    height:3vh;
+    margin: 1.5vh;
+    border-style: double;
+    border-width: 0.2px;
+    border-color: rgba(204, 204, 204,0.5);
+    box-shadow: -1px -1px 8px -6px rgba(0,0,0,0.5);
+    background: ghostwhite;
+    outline:none;
+}
+.customer__list__item:focus{
+    outline:1px;
+    outline-style: ridge;
+    outline-color: rgb(121, 121, 121);
+}
+.customer__list__btn{
+    display: inline-block;
+    width: 5rem;
+    height: 1.5rem;
+    background: rgba(16,24,94,0.8);
+    color:whitesmoke;
+    border: inset 1px ridge rgb(38, 47, 54);
+    outline:none;
+    font-family: sans-serif;
+    margin:2rem;
+}
+.customer__list__btn__signup{
+    display: inline-block;
+    width:8em;
+    height:1.5rem;
+    background: rgba(16,24,94,0.8);
+    color:whitesmoke;
+    border: inset 1px ridge rgb(38, 47, 54);
+    outline:none;
+    font-family: sans-serif;
+    margin:2rem;
+}
+.customer__list__header{
+    font-family: 'Pacifico';
+    font-size: 3.5vh;
+}
+.customer__list__para{
+    font-family: 'Nunito Sans';
+    font-size: 2vh;
+}
+
+.customer__list__btn:hover,
+.customer__list__btn__signup:hover{
+    background:rgba(162, 168, 228, 0.628);
+    color:black;
+}
+.customer__list__btn:active,.customer__list__btn__signup:hover{
+        outline: 0.5px rgb(85, 85, 85);
+        outline-style: dotted;
+}
+.customer__message{
+    opacity:0;
+    font-family: 'Nunito Sans';
+    text-align: center;
+    font-size: 1rem;
+    outline:2px;
+    outline-style: groove;
+    outline-color: darkred;
+    width:60%;
+    height:8%;
+    animation: msg_box_anim 4s normal forwards;
+}
+
+@media (max-width:1080px){
+    .container{
+        width:90%;
+    }
+    .customer__list p{
+    font-size: 3vh;
+    }
+    .customer__list__item{
+        width:60%;
+        height:30%;
+    }
+
+}
+@keyframes msg_box_anim{
+    0%{
+    opacity:1;
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+
+}
+
